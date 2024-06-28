@@ -1,8 +1,11 @@
-round = int(input("Enter round: "))
-Result = 0
+p = {
+    'name' : "Songpol Srima",
+    "age" :17,
+    "w" :65,
+    "h" :178,
+    "email": "6629011030@cdti.ac.th"
+    }
 
-for i in range(round):
-    Number = int(input("Enter number %d: " %(i+1)))
-    Result += Number
-    
-print("Result :",Result)
+print("Hello %s" % p["name"])
+print(" อายุ %d น้ำหนัก %d ส่วนสูง %d " % (p["age"], p["w"], p["h"]))       
+print("อีเมล %s" % (p["email"]))
