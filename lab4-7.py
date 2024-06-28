@@ -2,7 +2,7 @@ def Circle(r):
     return 22/7*(r**2)
 
 def BMI(w,h):
-    return w/(h/100)
+    return round(w/((h/100)**2),2)
 
 def BMICheck(bmi):
     res = None
@@ -26,6 +26,6 @@ def BMICheck(bmi):
 R = float(input("รัศมีของวงกลม = "))
 print("พท.วงกลมที่มีรัศมี %.2f คือ %.2f" %(R, Circle(R)))
 
-W = int(input("หา BMI : ส่วนสูง(cm) = "))
-H = int(input("หา BMI : น้ำหนัก(kg) = "))
+H = float(input("หา BMI : ส่วนสูง(cm) = "))
+W = float(input("หา BMI : น้ำหนัก(kg) = "))
 print("BMI ของความสูง %d cm น้ำหนัก %d kg คือ %d ซึ่งอยู่ในเกณฑ์ %s" %(W, H, BMI(W, H), BMICheck(BMI(W, H))))
