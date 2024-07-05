@@ -14,10 +14,12 @@ try:
     a = int(input(f"คะแนนจิตพิสัย(Max:{amax}): "))
     t = int(input(f"คะแนนสอบ(Max:{tmax}): "))
     
-    if midscore(w,a,t)[0] == 1:
-        print("Success:",midscore(w,a,t)[1])
+    res = midscore(w,a,t)
+    
+    if res[0] == 1:
+        print("Success:",res[1])
     else:
-        print("Error:",midscore(w,a,t)[1])
+        print("Error:",res[1])
     
 except Exception as e:
     print("Error:",e)
