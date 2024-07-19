@@ -1,0 +1,26 @@
+import tkinter as tk
+
+def showme():
+    E1 = e1.get()
+    E2 = e2.get()
+    print(E1,E2)
+
+app = tk.Tk()
+app.geometry("500x300")
+app.title("Hello")
+l1 = tk.Label(text="Hello")
+l2 = tk.Label(text="my Tkinter")
+l3 = tk.Label(text="product ID:")
+e1 = tk.Entry()
+l4 = tk.Label(text="product price:")
+e2 = tk.Entry()
+b1 = tk.Button(text="submit",command=showme)
+#l1.grid(row=1, column=10, sticky="NSEW")
+l1.place(x=30,y=10)
+l2.place(x=30,y=30)
+l3.place(x=30,y=50)
+e1.place(x=140,y=50)
+l4.place(x=30,y=70)
+e2.place(x=140,y=70)
+b1.place(x=300,y=70)
+app.mainloop()
