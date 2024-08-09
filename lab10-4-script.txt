@@ -1,0 +1,63 @@
+from machine import Pin
+from utime import sleep
+
+print("ธีราธร มูลลือ เลขที่ 5")
+ledIn = [22, 21]
+ledOut = [19, 23]
+
+def fd():
+    for i in range(len(led)):
+        led[i].on()
+        led[i].off()
+        sleep(0.3)
+
+def bk():
+    for i in range(len(led),0,-1):
+        led[i-1].on()
+        led[i-1].off()
+        sleep(0.3)
+
+def off():
+    for i in range(len(ledIn)):
+        ledIn[i].off()
+    for i in range(len(ledOut)):
+        ledOut[i].off()
+
+def mo():
+    for i in range(len(ledIn)):
+        ledIn[i].on()
+    for i in range(len(ledOut)):
+        ledOut[i].off()
+    sleep(0.3)
+    for i in range(len(ledOut)):
+        ledOut[i].on()
+    for i in range(len(ledIn)):
+        ledIn[i].off()
+    sleep(0.3)
+    off()
+
+def mi():
+    for i in range(len(ledIn)):
+        ledIn[i].off()
+    for i in range(len(ledOut)):
+        ledOut[i].on()
+    sleep(0.3)
+    for i in range(len(ledOut)):
+        ledOut[i].off()
+    for i in range(len(ledIn)):
+        ledIn[i].on()
+    sleep(0.3)
+    off()
+
+for i in range(len(ledIn)):
+    ledIn[i] = Pin(ledIn[i], Pin.OUT)
+for i in range(len(ledOut)):
+    ledOut[i] = Pin(ledOut[i], Pin.OUT)
+
+while True:
+    mo()
+    sleep(0.3)
+    mi()
+    sleep(0.3)
+
+    
